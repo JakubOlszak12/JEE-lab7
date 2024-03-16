@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message,
+        #error {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Add Student</h2>
+<form id="addStudentForm" onsubmit="addStudent(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" required><br><br>
+    <label for="average">Avarage:</label>
+    <input type="number" step="0.01"  id="average" name="average" required><br><br>
+    <button type="submit">Add Student</button>
+</form>
+
+<h2>Update Student</h2>
+<form id="updateStudentForm" onsubmit="updateStudent(event)">
+    <label for="updateId">Student ID:</label>
+    <input type="number" id="updateId" name="updateId" required><br><br>
+    <label for="updateName">Name:</label>
+    <input type="text" id="updateName" name="updateName" required><br><br>
+    <label for="updateSurname">Surname:</label>
+    <input type="text" id="updateSurname" name="updateSurname" required><br><br>
+    <label for="updateAverage">Average:</label>
+    <input type="number" step="0.01" id="updateAverage" name="updateAverage" required><br><br>
+    <button type="submit">Update Student</button>
+</form>
+
+<h2>Delete Student</h2>
+<form id="deleteStudentForm" onsubmit="deleteStudent(event)">
+    <label for="deleteId">Student ID:</label>
+    <input type="number" id="deleteId" name="deleteId" required><br><br>
+    <button type="submit">Delete Student</button>
+</form>
+
+<button onclick="getStudents()">Get Students</button> <br/><br/>
+
+<div id="message"></div>
+<div id="error" style="color: red;"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
